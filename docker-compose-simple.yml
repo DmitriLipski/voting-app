@@ -1,0 +1,24 @@
+redis:
+  image: redis
+db:
+  image: postgres
+
+vote:
+  image: vote-app
+  ports:
+    - 7000:80
+  links:
+    - redis
+worker:
+  image: worker-app
+  links:
+    - db
+    - redis
+
+result:
+  image: result-app
+  ports:
+    - 7001:80
+  links:
+    - db
+
