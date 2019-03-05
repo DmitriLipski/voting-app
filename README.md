@@ -26,3 +26,22 @@ sudo docker run -d --name worker-app --link redis:redis --link db:db worker-app
 sudo docker run -d -p 7000:80 --link redis:redis --name vote-app vote-app
 sudo docker run -d -p 7001:80 --link db:db --name result-app result-app
 ```
+
+#### Run With Docker Compose
+##### Run:
+```
+docker-compose -f docker-compose-simple.yml up -d
+```
+##### Stop:
+```
+docker-compose -f docker-compose-simple.yml stop
+```
+#### OR
+##### Run:
+```
+docker-compose -f docker-compose-v3.yml up -d
+```
+##### Stop:
+```
+docker-compose -f docker-compose-v3.yml stop
+```
